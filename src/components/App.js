@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-
+import ResourceList from './ResourceList';
+import UserList from './UserList';
 // A functional component can NOT make use of component level
 // states
 
  const App = () => {
+      // destructuring for an array
+      // when useState is called it returns an array with two elements inside of it.
+      // 1st element is assigned to setResource
+      // 2nd element is assigned to setResource
       const [resource, setResource] = useState('posts');
 
       return (
         <div>
+        <UserList/>
           <div>
             <button onClick={() => setResource('posts')}>Posts</button>
             <button onClick={() => setResource('todos')}>Todos</button>
           </div>
-          {resource}
+         <ResourceList resource ={resource}/>
         </div>
       );
   }
